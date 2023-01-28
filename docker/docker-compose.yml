@@ -1,0 +1,20 @@
+version: "3.6"
+
+services:
+
+  java_spring_app:
+    image: java_spring_app
+    container_name: java_spring_app
+    hostname: java_spring_app
+    build:
+      context: ../
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - "9292:9292"
+    networks:
+      - network_postgres
+
+
+networks:
+  network_postgres:
+    name: network_postgres
