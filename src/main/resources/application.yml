@@ -6,10 +6,16 @@ server:
 spring:
   main:
     banner-mode: 'off'
-  profiles:
-    active: '@activatedProperties@'
   application:
     name: '@project.artifactId@'
+  profiles:
+    active: '@activatedProperties@'
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
 
 ---
 spring:
