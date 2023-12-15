@@ -1,4 +1,4 @@
-FROM maven:3.8.1-jdk-11 as build
+FROM maven:3.9.6-amazoncorretto-17 AS build
 
 WORKDIR /workspace
 
@@ -8,7 +8,7 @@ COPY src/ /workspace/src/
 
 RUN mvn clean package
 
-FROM openjdk:11.0.16-jre-slim as prod
+FROM amazoncorretto:17-alpine-jdk AS prod
 
 EXPOSE 9292/tcp
 
